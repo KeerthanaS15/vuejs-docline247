@@ -1,0 +1,37 @@
+{
+    "categories":
+    [
+        {
+            "id": 1,
+            "name": "Cardiology",
+            "icon": "http://localhost:8080/media/categories/image_53.png"
+        },
+        {
+            "id": 2,
+            "name": "Neurology",
+            "icon": "http://localhost:8080/media/categories/image_54.png"
+        }
+    ],
+
+    "doctorDetails": 
+    [
+        {
+            "id": 1,
+            "name": "Herbert",
+            "gender": "M",
+            "category": 1,
+            "age": 45,
+            "year_of_employment": 2010,
+            "profile_pic": "http://localhost:8000/media/doctors/image_59.png"
+        },
+        {
+            "id": 2,
+            "name": "Alena",
+            "gender": "F",
+            "category": 1,
+            "age": 35,
+            "year_of_employment": 2017,
+            "profile_pic": "http://localhost:8000/media/doctors/image_60.png"
+        }
+    ]
+}

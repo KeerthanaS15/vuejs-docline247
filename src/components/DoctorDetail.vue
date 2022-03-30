@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="p-doctor__info m-doctor-card" v-for=" doctorDetail of doctorDetails" :key="doctorDetail.id">
+        <div class="p-doctor__info m-doctor-card" v-for=" doctorDetail of doctorsDetails" :key="doctorDetail.id">
             <img src="../assets/images/Dr.Smith.svg" alt="doctor" class="m-doctor-card__img">
 
             <div class="m-doctor-card__info m-doctor-card-side">
@@ -20,17 +20,24 @@ import axios from "axios";
 export default {
   data () {
     return {
-        doctorDetails:[]
+        doctorsDetails:[]
     }
   },
-async mounted() {
-    try {
-      const res = await axios.get(`http://localhost:3001/doctorDetails`);
-      this.doctorDetails = res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+methods: 
+{
+ getDoctorDetails () {
+  axios.get('/core/doctors/')
+   .then((response) => {
+    this.doctorsDetails = response.data
+    console.log(response.data)})
+   .catch((err) => {
+    console.error(err)
+   })
+ }
+},
+mounted () {
+    this.getDoctorDetails()
+}
 }
 </script>
 

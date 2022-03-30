@@ -1,0 +1,12 @@
+[
+    {
+    "id": 1,
+    "name": "Cardiology",
+    "icon": "/media/categories/image_54.png"
+},
+{
+    "id": 2,
+    "name": "Neurology",
+    "icon": "/media/categories/image_54.png"
+}
+]

@@ -24,24 +24,24 @@ import axios from "axios";
 export default {
   data () {
     return {
-        categories:[],
-        doctorDetails:[]
+        categories:[]
     }
   },
-async mounted() {
-    try {
-      const res = await axios.get(`http://localhost:3001/categories`);
-      this.categories = res.data;
-    } catch (error) {
-      console.log(error);
-    }
-    try {
-      const res = await axios.get(`http://localhost:3001/doctorDetails`);
-      this.doctorDetails = res.data;
-    } catch (error) {
-      console.log(error);
-    }
+    methods:
+  {
+    getCategories () {
+   axios.get('/core/categories/')
+   .then((response) => {
+    this.categories = response.data
+    console.log(response.data)})
+   .catch((err) => {
+    console.error(err)
+   })
   }
+},
+mounted () {
+    this.getCategories()
+}
 }
 </script>
 
